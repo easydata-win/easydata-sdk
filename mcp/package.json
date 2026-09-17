@@ -1,0 +1,51 @@
+{
+  "name": "@easydata.win/mcp",
+  "version": "1.0.1",
+  "description": "MCP server for the EasyData LinkedIn enrichment API - gives an agent the operations as tools",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "easydata-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "tsc -p tsconfig.json && node --test dist/*.test.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "linkedin",
+    "enrichment",
+    "easydata",
+    "agent"
+  ],
+  "homepage": "https://easydata.win",
+  "dependencies": {
+    "@easydata.win/sdk": "1.0.1",
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^20.0.0"
+  },
+  "author": "EasyData Development <dev@easydata.win>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easydata-win/easydata-sdk.git",
+    "directory": "mcp"
+  },
+  "bugs": {
+    "url": "https://github.com/easydata-win/easydata-sdk/issues"
+  }
+}
