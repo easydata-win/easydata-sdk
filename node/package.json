@@ -1,0 +1,52 @@
+{
+  "name": "@easydata.win/sdk",
+  "version": "1.1.0",
+  "description": "Official TypeScript client for the EasyData LinkedIn enrichment API",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node --test dist/*.test.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "linkedin",
+    "enrichment",
+    "data",
+    "api",
+    "scraping",
+    "easydata"
+  ],
+  "homepage": "https://easydata.win",
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^20.0.0"
+  },
+  "author": "EasyData Development <dev@easydata.win>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easydata-win/easydata-sdk.git",
+    "directory": "node"
+  },
+  "bugs": {
+    "url": "https://github.com/easydata-win/easydata-sdk/issues"
+  }
+}
