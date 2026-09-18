@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "easydata-api"
+version = "1.2.0"
+description = "Official Python client for the EasyData LinkedIn enrichment API"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "EasyData Development", email = "dev@easydata.win" }]
+keywords = ["linkedin", "enrichment", "data", "api", "scraping"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+# No runtime dependencies, deliberately. The client is urllib and the HMAC
+# webhook scheme is hashlib/hmac, both standard library - an enrichment script
+# should not drag a dependency tree in behind it.
+dependencies = []
+
+[project.optional-dependencies]
+# Only the asymmetric webhook scheme needs this. The HMAC one does not, and it
+# is the one most receivers use.
+ed25519 = ["cryptography>=42"]
+
+[project.urls]
+Homepage = "https://easydata.win"
+Documentation = "https://easydata.win/docs/api"
+Reference = "https://easydata.win/openapi.yaml"
+
+[tool.setuptools.packages.find]
+include = ["easydata_api*"]
